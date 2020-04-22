@@ -3,7 +3,7 @@
     <b-list-group v-if="addressBook">
       <b-list-group-item v-for="(item, i) in addressBook" :key="`${i}`">
         <span class="name">{{ item.name }}</span
-        >, <span class="number">{{ item.number }}</span> <br />
+        >, <span class="number">{{ item.phoneNumber }}</span> <br />
         <span class="address">{{ item.address }}</span>
       </b-list-group-item>
     </b-list-group>

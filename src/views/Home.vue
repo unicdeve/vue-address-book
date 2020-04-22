@@ -1,45 +1,46 @@
 <template>
   <div id="home-container">
-    <h1>Welcome to your address book...</h1>
+    <h1 class="text-center mb-5">Welcome to your address book...</h1>
 
-    <AddressList />
+    <div class="list-form-container">
+      <AddressList />
+      <AddressForm class="address" />
+    </div>
   </div>
 </template>
 
 <script>
 import AddressList from "@/components/AddressList.vue";
+import AddressForm from "@/components/AddressForm.vue";
 
 export default {
   name: "Home",
   components: {
-    AddressList
+    AddressList,
+    AddressForm
   }
 };
 </script>
 
 <style lang="scss">
 #home-container {
-  .list-group {
-    color: #333;
-    line-height: 1.1;
-
-    .name,
-    .number {
-      font-weight: 800;
-    }
-
-    .number {
-      font-size: 90%;
-    }
+  .list-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .address {
-      font-size: 80%;
-      color: #ccc;
+      margin-left: 2rem;
     }
   }
+
   @media only screen and (max-width: 800px) {
     h1 {
       font-size: 1.5rem;
+    }
+
+    .list-form-container {
+      flex-direction: column;
     }
   }
 }

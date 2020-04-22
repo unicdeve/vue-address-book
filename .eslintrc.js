@@ -13,6 +13,7 @@ module.exports = {
     "space-before-blocks": "off",
     quotes: "off",
     "no-extra-semi": "off",
-    semi: "off"
+    semi: "off",
+    "space-before-function-paren": "off"
   }
 };

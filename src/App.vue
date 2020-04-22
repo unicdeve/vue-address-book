@@ -27,7 +27,7 @@ export default {
   .router-view-container {
     display: flex;
     flex-direction: column;
-    margin: 0 15rem;
+    margin: 2rem 15rem;
 
     @media only screen and (max-width: 800px) {
       margin: 0 1rem;
