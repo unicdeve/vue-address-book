@@ -30,7 +30,7 @@ export default {
     margin: 2rem 15rem;
 
     @media only screen and (max-width: 800px) {
-      margin: 0 1rem;
+      margin: 1rem auto;
     }
   }
 }

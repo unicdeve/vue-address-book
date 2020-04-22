@@ -1,6 +1,6 @@
 <template>
   <div id="home-container">
-    <h1 class="text-center mb-5">Welcome to your address book...</h1>
+    <h1 class="text-center mb-3 mb-lg-5">Welcome to your address book...</h1>
 
     <div class="list-form-container">
       <AddressList />
@@ -31,6 +31,11 @@ export default {
 
     .address {
       margin-left: 2rem;
+
+      @media only screen and (max-width: 800px) {
+        margin-left: 0;
+        margin-top: 2rem;
+      }
     }
   }
 
