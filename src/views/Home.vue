@@ -4,7 +4,9 @@
 
     <div class="list-form-container">
       <AddressList />
-      <AddressForm class="address" />
+      <div class="address-container">
+        <AddressForm />
+      </div>
     </div>
   </div>
 </template>
@@ -29,7 +31,7 @@ export default {
     align-items: center;
     justify-content: center;
 
-    .address {
+    .address-container {
       margin-left: 2rem;
 
       @media only screen and (max-width: 800px) {
