@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header />
-    <router-view />
+    <div class="router-view-container">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -21,5 +23,15 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+
+  .router-view-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15rem;
+
+    @media only screen and (max-width: 800px) {
+      margin: 0 1rem;
+    }
+  }
 }
 </style>
