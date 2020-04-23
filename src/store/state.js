@@ -8,6 +8,13 @@ if (localStorage.addressBook) {
   localStorage.setItem("addressBook", JSON.stringify(book));
 }
 
+let user = {};
+if (localStorage.user) {
+  user = JSON.parse(localStorage.getItem("user"));
+}
+
 export default {
-  addressBook: book
+  addressBook: book,
+  user,
+  errors: {}
 };
