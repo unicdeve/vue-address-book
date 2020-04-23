@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import AddressList from "@/components/AddressList.vue";
 import AddressForm from "@/components/AddressForm.vue";
 
@@ -20,6 +21,14 @@ export default {
   components: {
     AddressList,
     AddressForm
+  },
+  computed: {
+    ...mapState(["user"])
+  },
+  mounted() {
+    this.$nextTick(function() {
+      if (!this.user.username) this.$router.push("/login");
+    });
   }
 };
 </script>
