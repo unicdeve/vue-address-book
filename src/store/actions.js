@@ -36,5 +36,8 @@ export default {
 
   selectAddress: ({ commit }, address) => {
     commit("selectAddress", address);
+  },
+  deleteAddress: ({ commit }, address) => {
+    commit("removeAddress", address);
   }
 };

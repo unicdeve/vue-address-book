@@ -28,6 +28,20 @@ export default {
     }
   },
 
+  removeAddress: (state, data) => {
+    let books = [...state.addressBook];
+
+    books = books.filter(
+      book =>
+        book.address !== data.address &&
+        book.name !== data.name &&
+        book.phoneNumber !== data.phoneNumber
+    );
+
+    state.addressBook = books;
+    saveAddressBook(state.addressBook);
+  },
+
   setUser: (state, user) => {
     state.user = user;
   },

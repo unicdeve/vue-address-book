@@ -16,13 +16,14 @@
             v-b-tooltip.hover
             title="Delete"
             class="mr-2"
+            @click="handleDelete(item)"
           />
           <b-icon
             icon="pencil"
             variant="success"
             v-b-tooltip.hover
             title="Edit"
-            @click="handleSelectedAddress(item)"
+            @click="handleEdit(item)"
           />
         </div>
       </b-list-group-item>
@@ -39,9 +40,12 @@ export default {
     ...mapState(["addressBook"])
   },
   methods: {
-    ...mapActions(["selectAddress"]),
-    handleSelectedAddress(address) {
+    ...mapActions(["selectAddress", "deleteAddress"]),
+    handleEdit(address) {
       this.selectAddress(address);
+    },
+    handleDelete(address) {
+      this.deleteAddress(address);
     }
   }
 };
