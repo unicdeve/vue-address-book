@@ -50,9 +50,11 @@ export default {
     handleSubmit() {
       if (this.selectedAddress.name) {
         this.editAddress(this.formData);
+        this.selectAddress({});
       } else {
         this.addAddress(this.formData);
       }
+
       this.resetForm();
     },
 
@@ -77,6 +79,8 @@ export default {
 
       if (this.selectedAddress.name) {
         this.btnText = "Edit";
+      } else {
+        this.btnText = "Add";
       }
     });
   },
