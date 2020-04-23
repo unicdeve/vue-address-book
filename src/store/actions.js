@@ -28,6 +28,11 @@ export default {
     }
   },
 
+  logout: ({ commit }) => {
+    localStorage.removeItem("user");
+    commit("logoutUser");
+  },
+
   clearError: ({ commit }) => {
     commit("setErrors", {});
   }

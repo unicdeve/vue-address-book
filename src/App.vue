@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :isAuthenticated="isAuthenticated" :logout="handleLogout" />
     <div class="router-view-container">
       <router-view />
     </div>
@@ -8,11 +8,42 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 import Header from "@/components/Header.vue";
 
 export default {
   components: {
     Header
+  },
+  computed: {
+    ...mapState(["user"])
+  },
+  data() {
+    return {
+      isAuthenticated: false
+    };
+  },
+  updated() {
+    this.$nextTick(function() {
+      if (this.user.username) this.isAuthenticated = true;
+      else {
+        this.$router.push("/login", () => {});
+        this.isAuthenticated = false;
+      }
+    });
+  },
+  mounted() {
+    this.$nextTick(function() {
+      if (this.user.username) this.isAuthenticated = true;
+      else this.isAuthenticated = false;
+    });
+  },
+  methods: {
+    ...mapActions(["logout"]),
+    handleLogout() {
+      this.logout();
+      this.isAuthenticated = false;
+    }
   }
 };
 </script>

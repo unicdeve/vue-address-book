@@ -44,8 +44,8 @@ export default {
       show: true,
       showErrors: false,
       formData: {
-        username: "",
-        password: ""
+        username: "admin",
+        password: "admin"
       }
     };
   },

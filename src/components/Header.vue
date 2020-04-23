@@ -2,10 +2,19 @@
   <div id="nav">
     <div class="nav-container">
       <router-link to="/">Home</router-link>
-      <router-link to="/login">Login</router-link>
+      <router-link to="/login" v-if="!isAuthenticated">Login</router-link>
+      <span @click="logout()" v-if="isAuthenticated">Log out</span>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "Header",
+  props: ["isAuthenticated", "logout"],
+  methods: {}
+};
+</script>
 
 <style lang="scss">
 #nav {
@@ -31,6 +40,10 @@
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+
+  span {
+    cursor: pointer;
   }
 }
 </style>
