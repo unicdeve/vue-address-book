@@ -22,9 +22,7 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-alert v-model="showErrors" variant="danger" dismissible>
-        {{ errors.general }}
-      </b-alert>
+      <b-alert v-model="showErrors" variant="danger" dismissible>{{ errors.general }}</b-alert>
 
       <b-button type="submit" variant="primary" block>Log in</b-button>
     </b-form>
@@ -68,6 +66,8 @@ export default {
       else this.showErrors = false;
 
       if (this.user.username) this.$router.push("/");
+
+      if (this.selectedAddress.name) this.formData = this.selectedAddress;
     });
   }
 };

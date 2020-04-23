@@ -15,6 +15,7 @@ if (localStorage.user) {
 
 export default {
   addressBook: book,
+  selectedAddress: {},
   user,
   errors: {}
 };
